@@ -4,7 +4,7 @@ Donate link: https://wpplugin.org/donate/
 Tags: PayPal, Events, Tickets, PayPal Buttons, ecommerce
 Author URI: https://wpplugin.org
 Requires at least: 3.5
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6
 Stable tag: 1.2.2
 License: GPLv2 or later
