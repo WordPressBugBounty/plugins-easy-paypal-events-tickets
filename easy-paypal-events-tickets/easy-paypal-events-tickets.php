@@ -3,17 +3,17 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /*
-Plugin Name: Easy PayPal Events
+Plugin Name: Easy PayPal Events & Tickets
 Plugin URI: https://wpplugin.org/downloads/easy-paypal-events-pro/
 Description: A simple and easy way to sell tickets for events.
 Tags: PayPal, Events, Tickets, PayPal Buttons, eCommerce
 Author: Scott Paterson
 Author URI: https://wpplugin.org
 License: GPL2
-Version: 1.2.2
+Version: 1.3
 */
 
-/*  Copyright 2014-2024 Scott Paterson
+/*  Copyright 2014-2025 Scott Paterson
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

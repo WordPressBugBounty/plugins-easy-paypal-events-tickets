@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 add_action('admin_notices', 'wpeevent_admin_notices');
 function wpeevent_admin_notices() {
 	if (!get_option('wpeevent_notice_shown')) {
-		echo "<div class='updated'><p><a href='admin.php?page=wpeevent_settings'>Click here to view the plugin settings</a>.</p></div>";
+		echo "<div class='updated'><p><a href='admin.php?page=wpeevent_settings'>Easy PayPal Events - Click here to view the plugin settings</a>.</p></div>";
 		update_option("wpeevent_notice_shown", "true");
 	}
 }

@@ -1,12 +1,12 @@
-=== Easy PayPal Events ===
+=== Easy PayPal Events & Tickets ===
 Contributors: scottpaterson,wp-plugin
 Donate link: https://wpplugin.org/donate/
 Tags: PayPal, Events, Tickets, PayPal Buttons, ecommerce
 Author URI: https://wpplugin.org
 Requires at least: 3.5
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 1.2.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,9 @@ Yes, there is no limit to the amount you can put on one post / page, or your ent
 
 == Changelog ==
 
+= 1.3 =
+* 5/1/25
+* Fix - Small Security Issue
 
 = 1.2.2 =
 * 9/21/24

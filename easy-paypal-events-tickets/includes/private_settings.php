@@ -390,6 +390,11 @@ function wpeevent_plugin_options() {
 				
 				<?php
 				if (isset($_GET['send_admin_email'])) {
+					// Check nonce for security
+					if (!isset($_GET['_wpnonce']) || !wp_verify_nonce($_GET['_wpnonce'], 'wpeevent_send_admin_email')) {
+						wp_die('Security check failed. Please try again.');
+					}
+					
 					$payer_email = "";
 					$send_admin_email = "1";
 					$send_admin_email_test = "1";
@@ -447,10 +452,15 @@ function wpeevent_plugin_options() {
 				
 				
 				
-				<b>Send test customer email to admin: </b></td><td><a href="?page=wpeevent_settings&send_customer_email&tab=4">Send test email</a> (uses test data)<br /><br /></td></tr><tr><td valign="top">
+				<b>Send test customer email to admin: </b></td><td><a href="<?php echo wp_nonce_url('?page=wpeevent_settings&send_customer_email&tab=4', 'wpeevent_send_customer_email'); ?>">Send test email</a> (uses test data)<br /><br /></td></tr><tr><td valign="top">
 				
 				<?php
 				if (isset($_GET['send_customer_email'])) {
+					// Check nonce for security
+					if (!isset($_GET['_wpnonce']) || !wp_verify_nonce($_GET['_wpnonce'], 'wpeevent_send_customer_email')) {
+						wp_die('Security check failed. Please try again.');
+					}
+					
 					$send_customer_email = "1";
 					$send_customer_email_test = "1";
 					include_once ('private_emails.php');
@@ -613,7 +623,7 @@ function wpeevent_plugin_options() {
 <br />
 <center><a target='_blank' href="https://wpplugin.org/downloads/easy-paypal-events-pro/" class='button-primary' style='font-size: 17px;line-height: 28px;height: 32px;'>Learn More</a></center>
 <br />
-<center><a target='_blank' href="https://wpplugin.org/downloads/easy-paypal-events-pro/#demo" class='button-secondary'>View Demo</a></center>
+<center><a target='_blank' href="https://demos.wpplugin.org/easy-paypal-events-pro/" class='button-secondary'>View Demo</a></center>
 <br />
 
 	</div>
