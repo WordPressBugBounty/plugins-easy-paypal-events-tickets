@@ -208,10 +208,15 @@ function wpplugin_wpeevent_button_ipn() {
 			update_post_meta($post_id, 'wpeevent_button_event_name', $event_name);
 			update_post_meta($post_id, 'wpeevent_button_custom', $custom);
 			
-			// generate qr code
-			$post_data = get_post($post_id);
-			$post_date = $post_data->post_date;
-			$hash = md5($post_date);
+			// generate qr code with secure hash
+			// Use a unique, non-predictable token stored with the order
+			$secure_token = get_post_meta($post_id, 'wpeevent_button_qr_token', true);
+			if (empty($secure_token)) {
+				// Generate a cryptographically secure random token
+				$secure_token = bin2hex(random_bytes(32)); // 64 character hex string
+				update_post_meta($post_id, 'wpeevent_button_qr_token', $secure_token);
+			}
+			$hash = hash_hmac('sha256', $post_id . '|' . $custom, $secure_token);
 			$qr_url = get_admin_url() . "admin-post.php?action=add_wpeevent_button_qr&order=$custom|$post_id|$hash";
 			$qr_url = urlencode($qr_url);
 			$qr_code = "<img src='https://quickchart.io/chart?cht=qr&chs=150x150&chl=$qr_url&choe=UTF-8' />";

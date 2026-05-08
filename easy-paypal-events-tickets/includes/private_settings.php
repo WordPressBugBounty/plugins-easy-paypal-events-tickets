@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function wpeevent_plugin_options() {
 
 	if ( !current_user_can( "manage_options" ) )  {
-		wp_die( __( "You do not have sufficient permissions to access this page. Please sign in as an administrator." ));
+		wp_die( esc_html__( "You do not have sufficient permissions to access this page. Please sign in as an administrator.", 'easy-paypal-events-tickets' ));
 	}
 
 	?>
@@ -84,7 +84,7 @@ function wpeevent_plugin_options() {
 			
 			update_option("wpeevent_settingsoptions", $options);
 			
-			echo "<br /><div class='updated'><p><strong>"; _e("Settings Updated."); echo "</strong></p></div>";
+			echo "<br /><div class='updated'><p><strong>"; esc_html_e("Settings Updated.", 'easy-paypal-events-tickets'); echo "</strong></p></div>";
 		}
 		
 		
@@ -114,7 +114,7 @@ function wpeevent_plugin_options() {
 			<br />
 			<span style="font-size:20pt;">Easy PayPal Events Settings</span>
 			</td><td valign="bottom">
-			<?php echo wp_nonce_field('nonce_save','action_save'); ?>
+			<?php wp_nonce_field('nonce_save','action_save'); ?>
 			<input type="submit" name='btn2' class='button-primary' style='font-size: 14px;height: 30px;float: right;' value="Save Settings">
 		</td></tr></table>
 			
@@ -386,7 +386,7 @@ function wpeevent_plugin_options() {
 				
 				<input type="checkbox" name="send_admin_email" value="1" <?php checked($value['send_admin_email'], '1'); ?>><br /><br /></td></tr><tr><td valign="top">
 				
-				<b>Send test admin email to admin: </b></td><td><a href="?page=wpeevent_settings&send_admin_email&tab=4">Send test email</a> (uses test data)<br /><br /></td></tr><tr><td valign="top">
+				<b>Send test admin email to admin: </b></td><td><a href="<?php echo esc_url( wp_nonce_url('?page=wpeevent_settings&send_admin_email&tab=4', 'wpeevent_send_admin_email') ); ?>">Send test email</a> (uses test data)<br /><br /></td></tr><tr><td valign="top">
 				
 				<?php
 				if (isset($_GET['send_admin_email'])) {
@@ -452,7 +452,7 @@ function wpeevent_plugin_options() {
 				
 				
 				
-				<b>Send test customer email to admin: </b></td><td><a href="<?php echo wp_nonce_url('?page=wpeevent_settings&send_customer_email&tab=4', 'wpeevent_send_customer_email'); ?>">Send test email</a> (uses test data)<br /><br /></td></tr><tr><td valign="top">
+				<b>Send test customer email to admin: </b></td><td><a href="<?php echo esc_url( wp_nonce_url('?page=wpeevent_settings&send_customer_email&tab=4', 'wpeevent_send_customer_email') ); ?>">Send test email</a> (uses test data)<br /><br /></td></tr><tr><td valign="top">
 				
 				<?php
 				if (isset($_GET['send_customer_email'])) {
@@ -521,14 +521,21 @@ function wpeevent_plugin_options() {
 				
 				<b>Default Button Size and style:</b>
 				</td></tr><tr><td valign="top">
+				<!-- phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Official PayPal button images required for admin button selection -->
 				<input <?php checked($value['size'], '1'); ?> type='radio' name='size' value='1'>Small Buy Now <br /><img src='https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif'></td><td valign='top' style='text-align: center;'>
+				<!-- phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Official PayPal button images required for admin button selection -->
 				<input <?php checked($value['size'], '2'); ?> type='radio' name='size' value='2'>Big Buy Now<br /><img src='https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif'></td><td valign='top' style='text-align: center;'>
+				<!-- phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Official PayPal button images required for admin button selection -->
 				<input <?php checked($value['size'], '3'); ?> type='radio' name='size' value='3'>Big Buy Now with Credit Cards <br /><img src='https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif'></td><td valign='top' style='text-align: center;'>
+				<!-- phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Official PayPal button images required for admin button selection -->
 				<input <?php checked($value['size'], '7'); ?> type='radio' name='size' value='7'>Gold (English only)<br /><img src='https://www.paypalobjects.com/webstatic/en_US/i/buttons/buy-logo-medium.png'>
 				
 				</td></tr><tr><td valign="top">
+				<!-- phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Official PayPal button images required for admin button selection -->
 				<input <?php checked($value['size'], '4'); ?> type='radio' name='size' value='4'>Small Pay Now <br /><img src='https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif'></td><td valign='top' style='text-align: center;'>
+				<!-- phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Official PayPal button images required for admin button selection -->
 				<input <?php checked($value['size'], '5'); ?> type='radio' name='size' value='5'>Big Pay Now <br /><img src='https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif'></td><td valign='top' style='text-align: center;'>
+				<!-- phpcs:ignore PluginCheck.CodeAnalysis.Offloading.OffloadedContent -- Official PayPal button images required for admin button selection -->
 				<input <?php checked($value['size'], '6'); ?> type='radio' name='size' value='6'>Big Pay Now with Credit Cards <br /><img src='https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif'></td><td valign='top' style='text-align: center;'>
 				
 				<!--

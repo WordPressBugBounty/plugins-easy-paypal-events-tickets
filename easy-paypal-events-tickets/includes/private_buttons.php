@@ -125,7 +125,7 @@ function wpeevent_plugin_buttons() {
 			
 			
 			function no_items() {
-				_e( 'No buttons found.' );
+				esc_html_e( 'No buttons found.', 'easy-paypal-events-tickets' );
 			}
 			
 			

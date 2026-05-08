@@ -102,9 +102,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				
 				$site_url = get_site_url();
 				
-				//echo "$site_url%2Fwp-admin%2Fadmin-post.php%3Faction%3Dadd_wpeevent_button_qr%26order%3D1321|1321|test&choe=UTF-8";
+				// For test emails, use a simple static test hash
+				$test_hash = md5('wpeevent_test_mode_' . wp_salt());
 				
-				$qr_code = "<img src='https://quickchart.io/chart?cht=qr&chs=150x150&chl=$site_url%2Fwp-admin%2Fadmin-post.php%3Faction%3Dadd_wpeevent_button_qr%26order%3D1321|1321|test&choe=UTF-8' />";
+				$qr_code = "<img src='https://quickchart.io/chart?cht=qr&chs=150x150&chl=$site_url%2F%3Faction%3Dadd_wpeevent_button_qr%26order%3D1|test|$test_hash&choe=UTF-8' />";
 			 }
 			 
 			 

@@ -6,7 +6,7 @@ Author URI: https://wpplugin.org
 Requires at least: 3.5
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.3
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,18 @@ Yes, there is no limit to the amount you can put on one post / page, or your ent
 5. Button Inserter
 
 == Changelog ==
+
+= 1.4.1 =
+* 5/7/26
+* Fix - Fixed undefined variable notice for post_date
+* Security - Enhanced QR code hash security with cryptographically secure random tokens to prevent unauthorized access to customer information
+
+= 1.4 =
+* 5/7/26
+* Security - Fixed critical authentication bypass vulnerability in QR code scanning functionality
+* Security - Replaced weak MD5 hash with cryptographically secure HMAC-SHA256 using random tokens
+* Security - QR codes now use non-predictable tokens to prevent brute-force attacks and order enumeration
+* Security - Test mode now displays mock data without accessing real order information
 
 = 1.3 =
 * 5/1/25

@@ -239,7 +239,7 @@ function wpeevent_plugin_orders() {
 			
 						
 			function no_items() {
-				_e( 'No orders found.' );
+				esc_html_e( 'No orders found.', 'easy-paypal-events-tickets' );
 			}
 			
 			function get_bulk_actions() {
@@ -490,7 +490,7 @@ function wpeevent_plugin_orders() {
 						}
 						
 						
-						echo $out;
+						echo wp_kses_post($out);
 						
 					?>
 					
@@ -564,10 +564,15 @@ function wpeevent_plugin_orders() {
 						$item_name = $out;
 						
 						
-						$post_data = get_post($post_id);
-						$post_date = $post_data->post_date;
-						$hash = md5($post_date);
+						// Generate secure QR code hash
+						$secure_token = get_post_meta($post_id, 'wpeevent_button_qr_token', true);
+						if (empty($secure_token)) {
+							// Generate a cryptographically secure random token
+							$secure_token = bin2hex(random_bytes(32)); // 64 character hex string
+							update_post_meta($post_id, 'wpeevent_button_qr_token', $secure_token);
+						}
 						$custom = $post_id;
+						$hash = hash_hmac('sha256', $post_id . '|' . $custom, $secure_token);
 						$qr_url = get_admin_url() . "admin-post.php?action=add_wpeevent_button_qr&order=$custom|$post_id|$hash";
 						$qr_url = urlencode($qr_url);
 						$qr_code = "<img src='https://quickchart.io/chart?cht=qr&chs=150x150&chl=$qr_url&choe=UTF-8' />";

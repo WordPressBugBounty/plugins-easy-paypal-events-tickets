@@ -48,10 +48,10 @@ if ($_POST['wpeevent_button_qty_a'] >= 1) {
 	$amount_1 = sanitize_text_field($_POST['amount_1']);
 	$id_1 = sanitize_text_field($_POST['id_1']);
 	$quantity_1 = sanitize_text_field($_POST['wpeevent_button_qty_a']);
-	echo "<input type='hidden' name='item_name_1' value='" . esc_attr($item_name_1) . "'>";
-	echo "<input type='hidden' name='amount_1' value='" . esc_attr($amount_1) . "'>";
-	echo "<input type='hidden' name='item_number_1' value='" . esc_attr($id_1) . "'>";
-	echo "<input type='hidden' name='quantity_1' value='" . esc_attr($quantity_1) . "'>";
+	printf("<input type='hidden' name='item_name_1' value='%s'>", esc_attr($item_name_1));
+	printf("<input type='hidden' name='amount_1' value='%s'>", esc_attr($amount_1));
+	printf("<input type='hidden' name='item_number_1' value='%s'>", esc_attr($id_1));
+	printf("<input type='hidden' name='quantity_1' value='%s'>", esc_attr($quantity_1));
 	
 	$custom .= "1|$quantity_1|";
 }
@@ -65,10 +65,10 @@ if (!empty($_POST['wpeevent_button_qty_b']) && $_POST['wpeevent_button_qty_b'] >
 	$amount_2 = sanitize_text_field($_POST['amount_2']);
 	$id_2 = sanitize_text_field($_POST['id_2']);
 	$quantity_2 = sanitize_text_field($_POST['wpeevent_button_qty_b']);
-	echo "<input type='hidden' name='item_name_$number' value='" . esc_attr($item_name_2) . "'>";
-	echo "<input type='hidden' name='amount_$number' value='" . esc_attr($amount_2) . "'>";
-	echo "<input type='hidden' name='item_number_$number' value='" . esc_attr($id_2) . "'>";
-	echo "<input type='hidden' name='quantity_$number' value='" . esc_attr($quantity_2) . "'>";
+	printf("<input type='hidden' name='item_name_2' value='%s'>", esc_attr($item_name_2));
+	printf("<input type='hidden' name='amount_2' value='%s'>", esc_attr($amount_2));
+	printf("<input type='hidden' name='item_number_2' value='%s'>", esc_attr($id_2));
+	printf("<input type='hidden' name='quantity_2' value='%s'>", esc_attr($quantity_2));
 	
 	$custom .= "2|$quantity_2|";
 }
@@ -82,10 +82,10 @@ if (!empty($_POST['wpeevent_button_qty_c']) && $_POST['wpeevent_button_qty_c'] >
 	$amount_3 = sanitize_text_field($_POST['amount_3']);
 	$id_3 = sanitize_text_field($_POST['id_3']);
 	$quantity_3 = sanitize_text_field($_POST['wpeevent_button_qty_c']);
-	echo "<input type='hidden' name='item_name_$number' value='" . esc_attr($item_name_3) . "'>";
-	echo "<input type='hidden' name='amount_$number' value='" . esc_attr($amount_3) . "'>";
-	echo "<input type='hidden' name='item_number_$number' value='" . esc_attr($id_3) . "'>";
-	echo "<input type='hidden' name='quantity_$number' value='" . esc_attr($quantity_3) . "'>";
+	printf("<input type='hidden' name='item_name_3' value='%s'>", esc_attr($item_name_3));
+	printf("<input type='hidden' name='amount_3' value='%s'>", esc_attr($amount_3));
+	printf("<input type='hidden' name='item_number_3' value='%s'>", esc_attr($id_3));
+	printf("<input type='hidden' name='quantity_3' value='%s'>", esc_attr($quantity_3));
 	
 	$custom .= "3|$quantity_3|";
 }
@@ -99,10 +99,10 @@ if (!empty($_POST['wpeevent_button_qty_d']) && $_POST['wpeevent_button_qty_d'] >
 	$amount_4 = sanitize_text_field($_POST['amount_4']);
 	$id_4= sanitize_text_field($_POST['id_4']);
 	$quantity_4 = sanitize_text_field($_POST['wpeevent_button_qty_d']);
-	echo "<input type='hidden' name='item_name_$number' value='" . esc_attr($item_name_4) . "'>";
-	echo "<input type='hidden' name='amount_$number' value='" . esc_attr($amount_4) . "'>";
-	echo "<input type='hidden' name='item_number_$number' value='" . esc_attr($id_4) . "'>";
-	echo "<input type='hidden' name='quantity_$number' value='" . esc_attr($quantity_4) . "'>";
+	printf("<input type='hidden' name='item_name_4' value='%s'>", esc_attr($item_name_4));
+	printf("<input type='hidden' name='amount_4' value='%s'>", esc_attr($amount_4));
+	printf("<input type='hidden' name='item_number_4' value='%s'>", esc_attr($id_4));
+	printf("<input type='hidden' name='quantity_4' value='%s'>", esc_attr($quantity_4));
 	
 	$custom .= "4|$quantity_4|";
 }
@@ -116,10 +116,10 @@ if (!empty($_POST['wpeevent_button_qty_e']) && $_POST['wpeevent_button_qty_e'] >
 	$amount_5 = sanitize_text_field($_POST['amount_5']);
 	$id_5 = sanitize_text_field($_POST['id_5']);
 	$quantity_5 = sanitize_text_field($_POST['wpeevent_button_qty_e']);
-	echo "<input type='hidden' name='item_name_$number' value='" . esc_attr($item_name_5) . "'>";
-	echo "<input type='hidden' name='amount_$number' value='" . esc_attr($amount_5) . "'>";
-	echo "<input type='hidden' name='item_number_$number' value='" . esc_attr($id_5) . "'>";
-	echo "<input type='hidden' name='quantity_$number' value='" . esc_attr($quantity_5) . "'>";
+	printf("<input type='hidden' name='item_name_5' value='%s'>", esc_attr($item_name_5));
+	printf("<input type='hidden' name='amount_5' value='%s'>", esc_attr($amount_5));
+	printf("<input type='hidden' name='item_number_5' value='%s'>", esc_attr($id_5));
+	printf("<input type='hidden' name='quantity_5' value='%s'>", esc_attr($quantity_5));
 	
 	$custom .= "5|$quantity_5|";
 }
