@@ -4,9 +4,9 @@ Donate link: https://wpplugin.org/donate/
 Tags: PayPal, Events, Tickets, PayPal Buttons, ecommerce
 Author URI: https://wpplugin.org
 Requires at least: 3.5
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,10 @@ Yes, there is no limit to the amount you can put on one post / page, or your ent
 5. Button Inserter
 
 == Changelog ==
+
+= 1.4.2 =
+* 5/23/26
+* Fix - Resolved PayPal BAD_INPUT_ERROR when the first ticket type was ordered with quantity 0 while other ticket types had quantities. Cart items are now renumbered sequentially so PayPal accepts the order.
 
 = 1.4.1 =
 * 5/7/26

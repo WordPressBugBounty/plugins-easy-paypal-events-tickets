@@ -10,7 +10,7 @@ Tags: PayPal, Events, Tickets, PayPal Buttons, eCommerce
 Author: Scott Paterson
 Author URI: https://wpplugin.org
 License: GPL2
-Version: 1.4.1
+Version: 1.4.2
 Text Domain: easy-paypal-events-tickets
 */
 
